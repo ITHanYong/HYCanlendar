@@ -1,6 +1,6 @@
 //
-//  HYCalendarEventCell.h
-//  POD_HYCanlendar
+//  CalendarEventCell.h
+//  HYCanlendar
 //
 //  Created by HanYong on 2020/3/23.
 //
@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HYCalendarEventCell : UITableViewCell
+@interface CalendarEventCell : UITableViewCell
 
 + (instancetype)cellWithTableView:(UITableView *)tableView;
 

@@ -1,21 +1,21 @@
 //
-//  LTSCalendarAppearance.h
-//  LTSCalendar
+//  CalendarAppearance.h
+//  Calendar
 //
-//  Created by leetangsong_macbk on 16/5/24.
-//  Copyright © 2016年 leetangsong. All rights reserved.
+//  Created by Mac on 16/5/24.
+//  Copyright © 2016年 Mac. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(NSInteger, LTSCalendarWeekDayFormat) {
-    LTSCalendarWeekDayFormatSingle,
-    LTSCalendarWeekDayFormatShort,
-    LTSCalendarWeekDayFormatFull
+typedef NS_ENUM(NSInteger, CalendarWeekDayFormat) {
+    CalendarWeekDayFormatSingle,
+    CalendarWeekDayFormatShort,
+    CalendarWeekDayFormatFull
 };
 
 
-@interface LTSCalendarAppearance : NSObject
+@interface CalendarAppearance : NSObject
 
 
 ///从星期几开始   8 代表星期天开始 
@@ -89,7 +89,7 @@ typedef NS_ENUM(NSInteger, LTSCalendarWeekDayFormat) {
 
 
 /// Weekday
-@property (nonatomic, assign)   LTSCalendarWeekDayFormat weekDayFormat;
+@property (nonatomic, assign)   CalendarWeekDayFormat weekDayFormat;
 /// 周  标识 颜色
 @property (nonatomic, strong)   UIColor *weekDayTextColor;
 /// 周  标识  字体大小

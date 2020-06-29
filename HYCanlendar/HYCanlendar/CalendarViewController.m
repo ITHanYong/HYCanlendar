@@ -1,36 +1,36 @@
 //
-//  LTSCalendarViewController.m
-//  LTSCalendar
+//  CalendarViewController.m
+//  Calendar
 //
-//  Created by 李棠松 on 2018/1/12.
-//  Copyright © 2018年 leetangsong. All rights reserved.
+//  Created by Mac on 2018/1/12.
+//  Copyright © 2018年 Mac. All rights reserved.
 //
 
-#import "LTSCalendarViewController.h"
-#import "LTSCalendarManager.h"
+#import "CalendarViewController.h"
+#import "CalendarManager.h"
 
-@interface LTSCalendarViewController ()<LTSCalendarEventSource>
+@interface CalendarViewController ()<CalendarEventSource>
 {
     NSMutableDictionary *eventsByDate;
 }
 
 
 
-@property (nonatomic,strong)LTSCalendarManager *manager;
+@property (nonatomic,strong)CalendarManager *manager;
 
 @end
 
-@implementation LTSCalendarViewController
+@implementation CalendarViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.manager = [LTSCalendarManager new];
+    self.manager = [CalendarManager new];
     self.manager.eventSource = self;
-    self.manager.weekDayView = [[LTSCalendarWeekDayView alloc]initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, 30)];
+    self.manager.weekDayView = [[CalendarWeekDayView alloc]initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, 30)];
     [self.view addSubview:self.manager.weekDayView];
     
-    self.manager.calenderScrollView = [[LTSCalendarScrollView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.manager.weekDayView.frame), CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)-CGRectGetMaxY(self.manager.weekDayView.frame))];
+    self.manager.calenderScrollView = [[CalendarScrollView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.manager.weekDayView.frame), CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)-CGRectGetMaxY(self.manager.weekDayView.frame))];
     [self.view addSubview:self.manager.calenderScrollView];
     [self createRandomEvents];
    self.automaticallyAdjustsScrollViewInsets = false;

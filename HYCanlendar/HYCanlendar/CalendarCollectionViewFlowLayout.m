@@ -1,16 +1,16 @@
 //
-//  LTSCalendarCollectionViewFlowLauout.m
-//  LTSCalendar
+//  CalendarCollectionViewFlowLauout.m
+//  Calendar
 //
-//  Created by 李棠松 on 2018/1/9.
-//  Copyright © 2018年 leetangsong. All rights reserved.
+//  Created by Mac on 2018/1/9.
+//  Copyright © 2018年 Mac. All rights reserved.
 //
 
-#import "LTSCalendarCollectionViewFlowLayout.h"
-@interface LTSCalendarCollectionViewFlowLayout()
+#import "CalendarCollectionViewFlowLayout.h"
+@interface CalendarCollectionViewFlowLayout()
 @property (strong, nonatomic) NSMutableArray *allAttributes;  
 @end
-@implementation LTSCalendarCollectionViewFlowLayout
+@implementation CalendarCollectionViewFlowLayout
 
 - (void)prepareLayout
 {

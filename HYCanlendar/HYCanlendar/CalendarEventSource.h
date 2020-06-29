@@ -1,15 +1,15 @@
 //
-//  LTSCalendarEventSource.h
-//  LTSCalendar
+//  CalendarEventSource.h
+//  Calendar
 //
-//  Created by leetangsong_macbk on 16/5/24.
-//  Copyright © 2016年 leetangsong. All rights reserved.
+//  Created by Mac on 16/5/24.
+//  Copyright © 2016年 Mac. All rights reserved.
 //  点击有事件日期。。。
 
 #import <Foundation/Foundation.h>
-@class LTSCalendarManager;
+@class CalendarManager;
 
-@protocol LTSCalendarEventSource <NSObject>
+@protocol CalendarEventSource <NSObject>
 
 /**
  该日期是否有事件

@@ -1,20 +1,20 @@
 //
-//  LTSCalendarManager.m
-//  LTSCalendar
+//  CalendarManager.m
+//  Calendar
 //
-//  Created by 李棠松 on 2018/1/13.
-//  Copyright © 2018年 leetangsong. All rights reserved.
+//  Created by Mac on 2018/1/13.
+//  Copyright © 2018年 Mac. All rights reserved.
 //
 
-#import "LTSCalendarManager.h"
+#import "CalendarManager.h"
 
-@implementation LTSCalendarManager
-- (void)setCalenderScrollView:(LTSCalendarScrollView *)calenderScrollView{
+@implementation CalendarManager
+- (void)setCalenderScrollView:(CalendarScrollView *)calenderScrollView{
     _calenderScrollView = calenderScrollView;
     calenderScrollView.calendarView.eventSource = self.eventSource;
 
 }
-- (void)setEventSource:(id<LTSCalendarEventSource>)eventSource{
+- (void)setEventSource:(id<CalendarEventSource>)eventSource{
     _eventSource = eventSource;
     self.calenderScrollView.calendarView.eventSource = self.eventSource;
    

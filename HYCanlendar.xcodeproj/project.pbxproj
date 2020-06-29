@@ -14,17 +14,17 @@
 		447CAFBA24A994A100678B52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 447CAFB924A994A100678B52 /* Assets.xcassets */; };
 		447CAFBD24A994A100678B52 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 447CAFBB24A994A100678B52 /* LaunchScreen.storyboard */; };
 		447CAFC024A994A100678B52 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 447CAFBF24A994A100678B52 /* main.m */; };
-		447CAFDF24A9952800678B52 /* LTSCalendarContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 447CAFC724A9952500678B52 /* LTSCalendarContentView.m */; };
-		447CAFE024A9952800678B52 /* LTSCalendarCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 447CAFC824A9952500678B52 /* LTSCalendarCollectionViewFlowLayout.m */; };
-		447CAFE124A9952800678B52 /* HYCalendarEventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 447CAFCB24A9952500678B52 /* HYCalendarEventCell.m */; };
-		447CAFE224A9952800678B52 /* LTSCalendarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 447CAFCD24A9952500678B52 /* LTSCalendarManager.m */; };
-		447CAFE324A9952800678B52 /* LTSCalendarScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 447CAFCF24A9952600678B52 /* LTSCalendarScrollView.m */; };
-		447CAFE424A9952800678B52 /* LTSCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 447CAFD124A9952600678B52 /* LTSCircleView.m */; };
-		447CAFE524A9952800678B52 /* LTSCalendarCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 447CAFD824A9952700678B52 /* LTSCalendarCollectionCell.m */; };
-		447CAFE624A9952800678B52 /* LTSCalendarWeekDayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 447CAFD924A9952700678B52 /* LTSCalendarWeekDayView.m */; };
-		447CAFE724A9952800678B52 /* LTSCalendarDayItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 447CAFDA24A9952700678B52 /* LTSCalendarDayItem.m */; };
-		447CAFE824A9952800678B52 /* LTSCalendarAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 447CAFDB24A9952700678B52 /* LTSCalendarAppearance.m */; };
-		447CAFE924A9952800678B52 /* LTSCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 447CAFDD24A9952700678B52 /* LTSCalendarViewController.m */; };
+		447CAFDF24A9952800678B52 /* CalendarContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 447CAFC724A9952500678B52 /* CalendarContentView.m */; };
+		447CAFE024A9952800678B52 /* CalendarCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 447CAFC824A9952500678B52 /* CalendarCollectionViewFlowLayout.m */; };
+		447CAFE124A9952800678B52 /* CalendarEventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 447CAFCB24A9952500678B52 /* CalendarEventCell.m */; };
+		447CAFE224A9952800678B52 /* CalendarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 447CAFCD24A9952500678B52 /* CalendarManager.m */; };
+		447CAFE324A9952800678B52 /* CalendarScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 447CAFCF24A9952600678B52 /* CalendarScrollView.m */; };
+		447CAFE424A9952800678B52 /* CircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 447CAFD124A9952600678B52 /* CircleView.m */; };
+		447CAFE524A9952800678B52 /* CalendarCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 447CAFD824A9952700678B52 /* CalendarCollectionCell.m */; };
+		447CAFE624A9952800678B52 /* CalendarWeekDayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 447CAFD924A9952700678B52 /* CalendarWeekDayView.m */; };
+		447CAFE724A9952800678B52 /* CalendarDayItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 447CAFDA24A9952700678B52 /* CalendarDayItem.m */; };
+		447CAFE824A9952800678B52 /* CalendarAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 447CAFDB24A9952700678B52 /* CalendarAppearance.m */; };
+		447CAFE924A9952800678B52 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 447CAFDD24A9952700678B52 /* CalendarViewController.m */; };
 		447CAFEA24A9952800678B52 /* ReplaceMe.m in Sources */ = {isa = PBXBuildFile; fileRef = 447CAFDE24A9952800678B52 /* ReplaceMe.m */; };
 /* End PBXBuildFile section */
 
@@ -41,29 +41,29 @@
 		447CAFBC24A994A100678B52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		447CAFBE24A994A100678B52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		447CAFBF24A994A100678B52 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		447CAFC724A9952500678B52 /* LTSCalendarContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSCalendarContentView.m; sourceTree = "<group>"; };
-		447CAFC824A9952500678B52 /* LTSCalendarCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSCalendarCollectionViewFlowLayout.m; sourceTree = "<group>"; };
-		447CAFC924A9952500678B52 /* HYCalendarEventCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYCalendarEventCell.h; sourceTree = "<group>"; };
-		447CAFCA24A9952500678B52 /* LTSCalendarCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCalendarCollectionViewFlowLayout.h; sourceTree = "<group>"; };
-		447CAFCB24A9952500678B52 /* HYCalendarEventCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYCalendarEventCell.m; sourceTree = "<group>"; };
-		447CAFCC24A9952500678B52 /* LTSCalendarEventSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCalendarEventSource.h; sourceTree = "<group>"; };
-		447CAFCD24A9952500678B52 /* LTSCalendarManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSCalendarManager.m; sourceTree = "<group>"; };
-		447CAFCE24A9952600678B52 /* LTSCalendarManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCalendarManager.h; sourceTree = "<group>"; };
-		447CAFCF24A9952600678B52 /* LTSCalendarScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSCalendarScrollView.m; sourceTree = "<group>"; };
-		447CAFD024A9952600678B52 /* LTSCalendarCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCalendarCollectionCell.h; sourceTree = "<group>"; };
-		447CAFD124A9952600678B52 /* LTSCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSCircleView.m; sourceTree = "<group>"; };
-		447CAFD224A9952600678B52 /* LTSCalendarAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCalendarAppearance.h; sourceTree = "<group>"; };
-		447CAFD324A9952600678B52 /* LTSCalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCalendarViewController.h; sourceTree = "<group>"; };
-		447CAFD424A9952600678B52 /* LTSCalendarScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCalendarScrollView.h; sourceTree = "<group>"; };
-		447CAFD524A9952600678B52 /* LTSCalendarContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCalendarContentView.h; sourceTree = "<group>"; };
-		447CAFD624A9952700678B52 /* LTSCalendarDayItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCalendarDayItem.h; sourceTree = "<group>"; };
-		447CAFD724A9952700678B52 /* LTSCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCircleView.h; sourceTree = "<group>"; };
-		447CAFD824A9952700678B52 /* LTSCalendarCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSCalendarCollectionCell.m; sourceTree = "<group>"; };
-		447CAFD924A9952700678B52 /* LTSCalendarWeekDayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSCalendarWeekDayView.m; sourceTree = "<group>"; };
-		447CAFDA24A9952700678B52 /* LTSCalendarDayItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSCalendarDayItem.m; sourceTree = "<group>"; };
-		447CAFDB24A9952700678B52 /* LTSCalendarAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSCalendarAppearance.m; sourceTree = "<group>"; };
-		447CAFDC24A9952700678B52 /* LTSCalendarWeekDayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCalendarWeekDayView.h; sourceTree = "<group>"; };
-		447CAFDD24A9952700678B52 /* LTSCalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSCalendarViewController.m; sourceTree = "<group>"; };
+		447CAFC724A9952500678B52 /* CalendarContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarContentView.m; sourceTree = "<group>"; };
+		447CAFC824A9952500678B52 /* CalendarCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		447CAFC924A9952500678B52 /* CalendarEventCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarEventCell.h; sourceTree = "<group>"; };
+		447CAFCA24A9952500678B52 /* CalendarCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		447CAFCB24A9952500678B52 /* CalendarEventCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarEventCell.m; sourceTree = "<group>"; };
+		447CAFCC24A9952500678B52 /* CalendarEventSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarEventSource.h; sourceTree = "<group>"; };
+		447CAFCD24A9952500678B52 /* CalendarManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarManager.m; sourceTree = "<group>"; };
+		447CAFCE24A9952600678B52 /* CalendarManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarManager.h; sourceTree = "<group>"; };
+		447CAFCF24A9952600678B52 /* CalendarScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarScrollView.m; sourceTree = "<group>"; };
+		447CAFD024A9952600678B52 /* CalendarCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarCollectionCell.h; sourceTree = "<group>"; };
+		447CAFD124A9952600678B52 /* CircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleView.m; sourceTree = "<group>"; };
+		447CAFD224A9952600678B52 /* CalendarAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarAppearance.h; sourceTree = "<group>"; };
+		447CAFD324A9952600678B52 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
+		447CAFD424A9952600678B52 /* CalendarScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarScrollView.h; sourceTree = "<group>"; };
+		447CAFD524A9952600678B52 /* CalendarContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarContentView.h; sourceTree = "<group>"; };
+		447CAFD624A9952700678B52 /* CalendarDayItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarDayItem.h; sourceTree = "<group>"; };
+		447CAFD724A9952700678B52 /* CircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleView.h; sourceTree = "<group>"; };
+		447CAFD824A9952700678B52 /* CalendarCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarCollectionCell.m; sourceTree = "<group>"; };
+		447CAFD924A9952700678B52 /* CalendarWeekDayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarWeekDayView.m; sourceTree = "<group>"; };
+		447CAFDA24A9952700678B52 /* CalendarDayItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarDayItem.m; sourceTree = "<group>"; };
+		447CAFDB24A9952700678B52 /* CalendarAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarAppearance.m; sourceTree = "<group>"; };
+		447CAFDC24A9952700678B52 /* CalendarWeekDayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarWeekDayView.h; sourceTree = "<group>"; };
+		447CAFDD24A9952700678B52 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
 		447CAFDE24A9952800678B52 /* ReplaceMe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReplaceMe.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,29 +116,29 @@
 		447CAFC624A994FE00678B52 /* HYCanlendar */ = {
 			isa = PBXGroup;
 			children = (
-				447CAFC924A9952500678B52 /* HYCalendarEventCell.h */,
-				447CAFCB24A9952500678B52 /* HYCalendarEventCell.m */,
-				447CAFD224A9952600678B52 /* LTSCalendarAppearance.h */,
-				447CAFDB24A9952700678B52 /* LTSCalendarAppearance.m */,
-				447CAFD024A9952600678B52 /* LTSCalendarCollectionCell.h */,
-				447CAFD824A9952700678B52 /* LTSCalendarCollectionCell.m */,
-				447CAFCA24A9952500678B52 /* LTSCalendarCollectionViewFlowLayout.h */,
-				447CAFC824A9952500678B52 /* LTSCalendarCollectionViewFlowLayout.m */,
-				447CAFD524A9952600678B52 /* LTSCalendarContentView.h */,
-				447CAFC724A9952500678B52 /* LTSCalendarContentView.m */,
-				447CAFD624A9952700678B52 /* LTSCalendarDayItem.h */,
-				447CAFDA24A9952700678B52 /* LTSCalendarDayItem.m */,
-				447CAFCC24A9952500678B52 /* LTSCalendarEventSource.h */,
-				447CAFCE24A9952600678B52 /* LTSCalendarManager.h */,
-				447CAFCD24A9952500678B52 /* LTSCalendarManager.m */,
-				447CAFD424A9952600678B52 /* LTSCalendarScrollView.h */,
-				447CAFCF24A9952600678B52 /* LTSCalendarScrollView.m */,
-				447CAFD324A9952600678B52 /* LTSCalendarViewController.h */,
-				447CAFDD24A9952700678B52 /* LTSCalendarViewController.m */,
-				447CAFDC24A9952700678B52 /* LTSCalendarWeekDayView.h */,
-				447CAFD924A9952700678B52 /* LTSCalendarWeekDayView.m */,
-				447CAFD724A9952700678B52 /* LTSCircleView.h */,
-				447CAFD124A9952600678B52 /* LTSCircleView.m */,
+				447CAFC924A9952500678B52 /* CalendarEventCell.h */,
+				447CAFCB24A9952500678B52 /* CalendarEventCell.m */,
+				447CAFD224A9952600678B52 /* CalendarAppearance.h */,
+				447CAFDB24A9952700678B52 /* CalendarAppearance.m */,
+				447CAFD024A9952600678B52 /* CalendarCollectionCell.h */,
+				447CAFD824A9952700678B52 /* CalendarCollectionCell.m */,
+				447CAFCA24A9952500678B52 /* CalendarCollectionViewFlowLayout.h */,
+				447CAFC824A9952500678B52 /* CalendarCollectionViewFlowLayout.m */,
+				447CAFD524A9952600678B52 /* CalendarContentView.h */,
+				447CAFC724A9952500678B52 /* CalendarContentView.m */,
+				447CAFD624A9952700678B52 /* CalendarDayItem.h */,
+				447CAFDA24A9952700678B52 /* CalendarDayItem.m */,
+				447CAFCC24A9952500678B52 /* CalendarEventSource.h */,
+				447CAFCE24A9952600678B52 /* CalendarManager.h */,
+				447CAFCD24A9952500678B52 /* CalendarManager.m */,
+				447CAFD424A9952600678B52 /* CalendarScrollView.h */,
+				447CAFCF24A9952600678B52 /* CalendarScrollView.m */,
+				447CAFD324A9952600678B52 /* CalendarViewController.h */,
+				447CAFDD24A9952700678B52 /* CalendarViewController.m */,
+				447CAFDC24A9952700678B52 /* CalendarWeekDayView.h */,
+				447CAFD924A9952700678B52 /* CalendarWeekDayView.m */,
+				447CAFD724A9952700678B52 /* CircleView.h */,
+				447CAFD124A9952600678B52 /* CircleView.m */,
 				447CAFDE24A9952800678B52 /* ReplaceMe.m */,
 			);
 			path = HYCanlendar;
@@ -216,20 +216,20 @@
 			files = (
 				447CAFB524A9949F00678B52 /* ViewController.m in Sources */,
 				447CAFAF24A9949F00678B52 /* AppDelegate.m in Sources */,
-				447CAFE524A9952800678B52 /* LTSCalendarCollectionCell.m in Sources */,
-				447CAFE424A9952800678B52 /* LTSCircleView.m in Sources */,
+				447CAFE524A9952800678B52 /* CalendarCollectionCell.m in Sources */,
+				447CAFE424A9952800678B52 /* CircleView.m in Sources */,
 				447CAFEA24A9952800678B52 /* ReplaceMe.m in Sources */,
-				447CAFE324A9952800678B52 /* LTSCalendarScrollView.m in Sources */,
-				447CAFE924A9952800678B52 /* LTSCalendarViewController.m in Sources */,
-				447CAFE724A9952800678B52 /* LTSCalendarDayItem.m in Sources */,
-				447CAFE624A9952800678B52 /* LTSCalendarWeekDayView.m in Sources */,
-				447CAFE024A9952800678B52 /* LTSCalendarCollectionViewFlowLayout.m in Sources */,
+				447CAFE324A9952800678B52 /* CalendarScrollView.m in Sources */,
+				447CAFE924A9952800678B52 /* CalendarViewController.m in Sources */,
+				447CAFE724A9952800678B52 /* CalendarDayItem.m in Sources */,
+				447CAFE624A9952800678B52 /* CalendarWeekDayView.m in Sources */,
+				447CAFE024A9952800678B52 /* CalendarCollectionViewFlowLayout.m in Sources */,
 				447CAFC024A994A100678B52 /* main.m in Sources */,
-				447CAFDF24A9952800678B52 /* LTSCalendarContentView.m in Sources */,
+				447CAFDF24A9952800678B52 /* CalendarContentView.m in Sources */,
 				447CAFB224A9949F00678B52 /* SceneDelegate.m in Sources */,
-				447CAFE124A9952800678B52 /* HYCalendarEventCell.m in Sources */,
-				447CAFE224A9952800678B52 /* LTSCalendarManager.m in Sources */,
-				447CAFE824A9952800678B52 /* LTSCalendarAppearance.m in Sources */,
+				447CAFE124A9952800678B52 /* CalendarEventCell.m in Sources */,
+				447CAFE224A9952800678B52 /* CalendarManager.m in Sources */,
+				447CAFE824A9952800678B52 /* CalendarAppearance.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

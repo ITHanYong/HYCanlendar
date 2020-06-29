@@ -1,21 +1,21 @@
 //
-//  LTSCalendarAppearance.m
-//  LTSCalendar
+//  CalendarAppearance.m
+//  Calendar
 //
-//  Created by leetangsong_macbk on 16/5/24.
-//  Copyright © 2016年 leetangsong. All rights reserved.
+//  Created by Mac on 16/5/24.
+//  Copyright © 2016年 Mac. All rights reserved.
 //  日历外观样式
 
-#import "LTSCalendarAppearance.h"
+#import "CalendarAppearance.h"
 
-@implementation LTSCalendarAppearance
+@implementation CalendarAppearance
 
 
 + (instancetype)share{
     static dispatch_once_t onceToken;
-    static LTSCalendarAppearance *appearance;
+    static CalendarAppearance *appearance;
     dispatch_once(&onceToken, ^{
-        appearance = [LTSCalendarAppearance new];
+        appearance = [CalendarAppearance new];
     });
     return  appearance;
 }
@@ -37,7 +37,7 @@
 - (void)setDefaultValues{
     self.dayCircleSize = 50;
     self.dayDotSize= self.dayCircleSize*1. / 9. ;
-    self.weekDayFormat = LTSCalendarWeekDayFormatSingle;
+    self.weekDayFormat = CalendarWeekDayFormatSingle;
     self.weekDayTextFont = [UIFont systemFontOfSize:11];
      self.weekDayTextColor = [UIColor colorWithRed:200./256. green:200./256. blue:200./256. alpha:1.];
     self.weeksToDisplay = 6;

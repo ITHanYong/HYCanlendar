@@ -1,15 +1,15 @@
 //
-//  LTSCalendarScrollView.m
-//  LTSCalendar
+//  CalendarScrollView.m
+//  Calendar
 //
-//  Created by 李棠松 on 2018/1/13.
-//  Copyright © 2018年 leetangsong. All rights reserved.
+//  Created by Mac on 2018/1/13.
+//  Copyright © 2018年 Mac. All rights reserved.
 //
 
-#import "LTSCalendarScrollView.h"
-#import "HYCalendarEventCell.h"
+#import "CalendarScrollView.h"
+#import "CalendarEventCell.h"
 
-@interface LTSCalendarScrollView()<UITableViewDelegate,UITableViewDataSource>
+@interface CalendarScrollView()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic,strong)UIView *line;
 
@@ -18,7 +18,7 @@
 @property (nonatomic, strong) NSArray *contents;
 
 @end
-@implementation LTSCalendarScrollView
+@implementation CalendarScrollView
 
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self == [super initWithFrame:frame]) {
@@ -40,8 +40,8 @@
     self.delegate = self;
     self.bounces = false;
     self.showsVerticalScrollIndicator = false;
-    self.backgroundColor = [LTSCalendarAppearance share].scrollBgcolor;
-    LTSCalendarContentView *calendarView = [[LTSCalendarContentView alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width, [LTSCalendarAppearance share].weekDayHeight*[LTSCalendarAppearance share].weeksToDisplay)];
+    self.backgroundColor = [CalendarAppearance share].scrollBgcolor;
+    CalendarContentView *calendarView = [[CalendarContentView alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width, [CalendarAppearance share].weekDayHeight*[CalendarAppearance share].weeksToDisplay)];
     calendarView.currentDate = [NSDate date];
     [self addSubview:calendarView];
     self.calendarView = calendarView;
@@ -53,14 +53,14 @@
     self.tableView.dataSource = self;
 
     self.tableView.contentInset = UIEdgeInsetsMake(10, 0, 0, 0);
-    self.tableView.scrollEnabled = [LTSCalendarAppearance share].isShowSingleWeek;
+    self.tableView.scrollEnabled = [CalendarAppearance share].isShowSingleWeek;
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     [self addSubview:self.tableView];
     
     
     self.line.backgroundColor = self.backgroundColor;
     [self addSubview:self.line];
-    [LTSCalendarAppearance share].isShowSingleWeek ? [self scrollToSingleWeek]:[self scrollToAllWeek];
+    [CalendarAppearance share].isShowSingleWeek ? [self scrollToSingleWeek]:[self scrollToAllWeek];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -71,7 +71,7 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    HYCalendarEventCell *cell = [HYCalendarEventCell cellWithTableView:tableView];
+    CalendarEventCell *cell = [CalendarEventCell cellWithTableView:tableView];
     cell.content = self.contents[indexPath.row];
     return cell;
 }
@@ -105,7 +105,7 @@
         return;
     }
   
-    LTSCalendarAppearance *appearce =  [LTSCalendarAppearance share];
+    CalendarAppearance *appearce =  [CalendarAppearance share];
     ///表需要滑动的距离
     CGFloat tableCountDistance = appearce.weekDayHeight*(appearce.weeksToDisplay-1);
     ///日历需要滑动的距离
@@ -126,7 +126,7 @@
     }else{
         
         self.tableView.scrollEnabled = false;
-        if ([LTSCalendarAppearance share].isShowSingleWeek) {
+        if ([CalendarAppearance share].isShowSingleWeek) {
            
             [self.calendarView setSingleWeek:false];
         }
@@ -148,7 +148,7 @@
     
 }
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event{
-    LTSCalendarAppearance *appearce =  [LTSCalendarAppearance share];
+    CalendarAppearance *appearce =  [CalendarAppearance share];
     CGFloat tableCountDistance = appearce.weekDayHeight*(appearce.weeksToDisplay-1);
     if ( appearce.isShowSingleWeek) {
         if (self.contentOffset.y != tableCountDistance) {
@@ -166,7 +166,7 @@
 
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView{
     
-    LTSCalendarAppearance *appearce =  [LTSCalendarAppearance share];
+    CalendarAppearance *appearce =  [CalendarAppearance share];
     CGFloat tableCountDistance = appearce.weekDayHeight*(appearce.weeksToDisplay-1);
 
     if (scrollView.contentOffset.y>=tableCountDistance) {
@@ -181,7 +181,7 @@
         return;
     }
    
-    LTSCalendarAppearance *appearce =  [LTSCalendarAppearance share];
+    CalendarAppearance *appearce =  [CalendarAppearance share];
     ///表需要滑动的距离
     CGFloat tableCountDistance = appearce.weekDayHeight*(appearce.weeksToDisplay-1);
     //point.y<0向上
@@ -202,7 +202,7 @@
     if (self != scrollView) {
         return;
     }
-    LTSCalendarAppearance *appearce =  [LTSCalendarAppearance share];
+    CalendarAppearance *appearce =  [CalendarAppearance share];
     ///表需要滑动的距离
     CGFloat tableCountDistance = appearce.weekDayHeight*(appearce.weeksToDisplay-1);
     //point.y<0向上
@@ -234,7 +234,7 @@
 
 
 - (void)scrollToSingleWeek{
-    LTSCalendarAppearance *appearce =  [LTSCalendarAppearance share];
+    CalendarAppearance *appearce =  [CalendarAppearance share];
     ///表需要滑动的距离
     CGFloat tableCountDistance = appearce.weekDayHeight*(appearce.weeksToDisplay-1);
     [self setContentOffset:CGPointMake(0, tableCountDistance) animated:true];
@@ -250,7 +250,7 @@
 - (void)layoutSubviews{
     [super layoutSubviews];
 
-    self.contentSize = CGSizeMake(0, CGRectGetHeight(self.frame)+[LTSCalendarAppearance share].weekDayHeight*([LTSCalendarAppearance share].weeksToDisplay-1));
+    self.contentSize = CGSizeMake(0, CGRectGetHeight(self.frame)+[CalendarAppearance share].weekDayHeight*([CalendarAppearance share].weeksToDisplay-1));
 }
 
 #pragma mark - 自适配高度

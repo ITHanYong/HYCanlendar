@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "LTSCalendarManager.h"
+#import "CalendarManager.h"
 
 #define RGBColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1]
 #define RandColor RGBColor(arc4random_uniform(255), arc4random_uniform(255), arc4random_uniform(255))
@@ -15,10 +15,10 @@
 //颜色
 #define UIColorFromRGB(rgbValue)            [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
-@interface ViewController ()<LTSCalendarEventSource,UINavigationControllerDelegate>{
+@interface ViewController ()<CalendarEventSource,UINavigationControllerDelegate>{
     NSMutableDictionary *eventsByDate;
 }
-@property (nonatomic,strong)LTSCalendarManager *manager;
+@property (nonatomic,strong)CalendarManager *manager;
 
 @end
 
@@ -29,12 +29,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    self.manager = [LTSCalendarManager new];
+    self.manager = [CalendarManager new];
     self.manager.eventSource = self;
-    self.manager.weekDayView = [[LTSCalendarWeekDayView alloc]initWithFrame:CGRectMake(0, 200, self.view.frame.size.width, 30)];
+    self.manager.weekDayView = [[CalendarWeekDayView alloc]initWithFrame:CGRectMake(0, 200, self.view.frame.size.width, 30)];
     [self.view addSubview:self.manager.weekDayView];
     
-    self.manager.calenderScrollView = [[LTSCalendarScrollView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.manager.weekDayView.frame), CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)-CGRectGetMaxY(self.manager.weekDayView.frame))];
+    self.manager.calenderScrollView = [[CalendarScrollView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.manager.weekDayView.frame), CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)-CGRectGetMaxY(self.manager.weekDayView.frame))];
     [self.view addSubview:self.manager.calenderScrollView];
     
     self.automaticallyAdjustsScrollViewInsets = false;
@@ -170,7 +170,7 @@
 
 #pragma mark -- 显示农历
 - (void)isShowLunar{
-    [LTSCalendarAppearance share].isShowLunarCalender = ![LTSCalendarAppearance share].isShowLunarCalender;
+    [CalendarAppearance share].isShowLunarCalender = ![CalendarAppearance share].isShowLunarCalender;
    //重新加载外观
     [self.manager reloadAppearanceAndData];
 }
@@ -178,32 +178,32 @@
 #pragma mark -- 改变颜色
 - (void)changeColor {
     //日历背景颜色
-    //[LTSCalendarAppearance share].calendarBgColor = RandColor;
+    //[CalendarAppearance share].calendarBgColor = RandColor;
     //周视图背景颜色
-    //[LTSCalendarAppearance share].weekDayBgColor = RandColor;
+    //[CalendarAppearance share].weekDayBgColor = RandColor;
     //日期选中颜色
-    [LTSCalendarAppearance share].dayCircleColorSelected = UIColorFromRGB(0xFF8A0D);
+    [CalendarAppearance share].dayCircleColorSelected = UIColorFromRGB(0xFF8A0D);
     //今天颜色
-    [LTSCalendarAppearance share].dayCircleColorToday = UIColorFromRGB(0xFF8A0D);
+    [CalendarAppearance share].dayCircleColorToday = UIColorFromRGB(0xFF8A0D);
     //圈圈颜色
-    [LTSCalendarAppearance share].dayBorderColorToday = UIColorFromRGB(0xFF8A0D);
+    [CalendarAppearance share].dayBorderColorToday = UIColorFromRGB(0xFF8A0D);
     //圆点颜色
-    [LTSCalendarAppearance share].dayDotColor = UIColorFromRGB(0xFF8A0D);
-    [LTSCalendarAppearance share].dayDotColorSelected = [UIColor whiteColor];
+    [CalendarAppearance share].dayDotColor = UIColorFromRGB(0xFF8A0D);
+    [CalendarAppearance share].dayDotColorSelected = [UIColor whiteColor];
     
     //农历字体
-    [LTSCalendarAppearance share].lunarDayTextColor = UIColorFromRGB(0x7E7E7E);
-    [LTSCalendarAppearance share].lunarDayTextFont = [UIFont systemFontOfSize:9];
+    [CalendarAppearance share].lunarDayTextColor = UIColorFromRGB(0x7E7E7E);
+    [CalendarAppearance share].lunarDayTextFont = [UIFont systemFontOfSize:9];
     
     //阳历字体
-    [LTSCalendarAppearance share].dayTextFont = [UIFont systemFontOfSize:16];
-    [LTSCalendarAppearance share].dayTextColor = UIColorFromRGB(0x1E1E1E);
+    [CalendarAppearance share].dayTextFont = [UIFont systemFontOfSize:16];
+    [CalendarAppearance share].dayTextColor = UIColorFromRGB(0x1E1E1E);
     
     //周视图
-    [LTSCalendarAppearance share].weekDayTextColor = UIColorFromRGB(0x7E7E7E);
-    [LTSCalendarAppearance share].weekDayTextFont = [UIFont systemFontOfSize:13];
+    [CalendarAppearance share].weekDayTextColor = UIColorFromRGB(0x7E7E7E);
+    [CalendarAppearance share].weekDayTextFont = [UIFont systemFontOfSize:13];
     
-    [LTSCalendarAppearance share].dayCircleSize = self.view.frame.size.width/7-10;
+    [CalendarAppearance share].dayCircleSize = self.view.frame.size.width/7-10;
     
     [self.manager reloadAppearanceAndData];
 }
@@ -220,32 +220,32 @@
 
 #pragma mark -- 从周一开始
 - (void)monday {
-    [LTSCalendarAppearance share].firstWeekday = 2;
+    [CalendarAppearance share].firstWeekday = 2;
     [self.manager reloadAppearanceAndData];
 }
 
 #pragma mark -- 从周日开始
 - (void)sunday {
-    [LTSCalendarAppearance share].firstWeekday = 1;
+    [CalendarAppearance share].firstWeekday = 1;
 
     [self.manager reloadAppearanceAndData];
 }
 
 #pragma mark -- 星期几
 - (void)full {
-    [LTSCalendarAppearance share].weekDayFormat = LTSCalendarWeekDayFormatFull;
+    [CalendarAppearance share].weekDayFormat = CalendarWeekDayFormatFull;
     [self.manager.weekDayView reloadAppearance];
 }
 
 #pragma mark -- 周几
 - (void)fullShort {
-    [LTSCalendarAppearance share].weekDayFormat = LTSCalendarWeekDayFormatShort;
+    [CalendarAppearance share].weekDayFormat = CalendarWeekDayFormatShort;
     [self.manager.weekDayView reloadAppearance];
 }
 
 #pragma mark - 几
 - (void)single {
-    [LTSCalendarAppearance share].weekDayFormat = LTSCalendarWeekDayFormatSingle;
+    [CalendarAppearance share].weekDayFormat = CalendarWeekDayFormatSingle;
     [self.manager.weekDayView reloadAppearance];
 }
 

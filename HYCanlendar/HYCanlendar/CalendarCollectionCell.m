@@ -1,20 +1,20 @@
 //
-//  LTSCalendarCollectionCell.m
-//  LTSCalendar
+//  CalendarCollectionCell.m
+//  Calendar
 //
-//  Created by 李棠松 on 2018/1/9.
-//  Copyright © 2018年 leetangsong. All rights reserved.
+//  Created by Mac on 2018/1/9.
+//  Copyright © 2018年 Mac. All rights reserved.
 //
 
-#import "LTSCalendarCollectionCell.h"
-#import "LTSCircleView.h"
-#import "LTSCalendarAppearance.h"
-@interface LTSCalendarCollectionCell(){
+#import "CalendarCollectionCell.h"
+#import "CircleView.h"
+#import "CalendarAppearance.h"
+@interface CalendarCollectionCell(){
     UIView *backgroundView;
-    LTSCircleView *circleView;
+    CircleView *circleView;
     UILabel *textLabel;
     UILabel *lunarTextLabel;
-    LTSCircleView *dotView;
+    CircleView *dotView;
     int isToday;
     NSString *cacheCurrentDateText;
     
@@ -22,7 +22,7 @@
 @end
 
 
-@implementation LTSCalendarCollectionCell
+@implementation CalendarCollectionCell
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -36,28 +36,28 @@
     backgroundView = [UIView new];
     [self addSubview:backgroundView];
     
-    circleView = [LTSCircleView new];
+    circleView = [CircleView new];
     [self addSubview:circleView];
     circleView.color = [UIColor clearColor];
     
     textLabel = [UILabel new];
-    textLabel.font = [LTSCalendarAppearance share].dayTextFont;
+    textLabel.font = [CalendarAppearance share].dayTextFont;
     
     
     textLabel.textAlignment = NSTextAlignmentCenter;
     [self addSubview:textLabel];
     
     lunarTextLabel = [UILabel new];
-    lunarTextLabel.font = [LTSCalendarAppearance share].lunarDayTextFont;
+    lunarTextLabel.font = [CalendarAppearance share].lunarDayTextFont;
     lunarTextLabel.textAlignment = NSTextAlignmentCenter;
     [self addSubview:lunarTextLabel];
     
-    dotView = [LTSCircleView new];
+    dotView = [CircleView new];
     [self addSubview:dotView];
     dotView.hidden = YES;
     
 }
-- (void)setItem:(LTSCalendarDayItem *)item{
+- (void)setItem:(CalendarDayItem *)item{
     _item = item;
     static NSArray *dayArray;
     static NSArray *monthArray;
@@ -73,7 +73,7 @@
     static NSDateFormatter *dateFormatter;
     if(!dateFormatter){
         dateFormatter = [NSDateFormatter new];
-        dateFormatter.timeZone = [LTSCalendarAppearance share].calendar.timeZone;
+        dateFormatter.timeZone = [CalendarAppearance share].calendar.timeZone;
         [dateFormatter setDateFormat:@"dd"];
     }
     
@@ -122,7 +122,7 @@
     static NSDateFormatter *dateFormatter;
     if(!dateFormatter){
         dateFormatter = [NSDateFormatter new];
-        dateFormatter.timeZone = [LTSCalendarAppearance share].calendar.timeZone;
+        dateFormatter.timeZone = [CalendarAppearance share].calendar.timeZone;
         dateFormatter.dateFormat = @"yyyy.MM.dd";
     }
     
@@ -132,13 +132,13 @@
 }
 - (void)configureConstraintsForSubviews{
     backgroundView.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
-    textLabel.frame = CGRectMake(0, 0, self.frame.size.width, [LTSCalendarAppearance share].dayTextFont.pointSize-4);
+    textLabel.frame = CGRectMake(0, 0, self.frame.size.width, [CalendarAppearance share].dayTextFont.pointSize-4);
     
-    lunarTextLabel.frame = CGRectMake(0, 0, self.frame.size.width, [LTSCalendarAppearance share].lunarDayTextFont.pointSize);
+    lunarTextLabel.frame = CGRectMake(0, 0, self.frame.size.width, [CalendarAppearance share].lunarDayTextFont.pointSize);
     
-    CGFloat sizeCircle = [LTSCalendarAppearance share].dayCircleSize;
+    CGFloat sizeCircle = [CalendarAppearance share].dayCircleSize;
     
-    CGFloat sizeDot = [LTSCalendarAppearance share].dayDotSize;
+    CGFloat sizeDot = [CalendarAppearance share].dayDotSize;
     
     circleView.frame = CGRectMake(0, 0, sizeCircle, sizeCircle);
     circleView.center = CGPointMake(self.frame.size.width / 2., circleView.center.y);
@@ -150,7 +150,7 @@
     CGFloat dotY;
     //是否显示农历
     
-    if ([LTSCalendarAppearance share].isShowLunarCalender) {
+    if ([CalendarAppearance share].isShowLunarCalender) {
         lunarTextLabel.hidden =  NO;
         textLabel.center =  CGPointMake(circleView.center.x, circleView.center.y- CGRectGetHeight(textLabel.frame)/2);
         lunarTextLabel.center = CGPointMake(circleView.center.x, circleView.center.y + CGRectGetHeight(lunarTextLabel.frame)/2+2);
@@ -175,7 +175,7 @@
     static NSDateFormatter *dateFormatter;
     if(!dateFormatter){
         dateFormatter = [NSDateFormatter new];
-        dateFormatter.timeZone = [LTSCalendarAppearance share].calendar.timeZone;
+        dateFormatter.timeZone = [CalendarAppearance share].calendar.timeZone;
         dateFormatter.dateFormat = @"yyyy.MM.dd";
     }
     
@@ -202,41 +202,41 @@
     CGAffineTransform tr = CGAffineTransformIdentity;
     CGFloat opacity = 1.;
     if(isSelected){
-        if(!self.item.isOtherMonth || [LTSCalendarAppearance share].isShowSingleWeek){
-            circleView.color = [LTSCalendarAppearance share].dayCircleColorSelected;
+        if(!self.item.isOtherMonth || [CalendarAppearance share].isShowSingleWeek){
+            circleView.color = [CalendarAppearance share].dayCircleColorSelected;
             circleView.layer.borderColor = [UIColor clearColor].CGColor;
-            textLabel.textColor = [LTSCalendarAppearance share].dayTextColorSelected;
-            lunarTextLabel.textColor = [LTSCalendarAppearance share].lunarDayTextColorSelected;
+            textLabel.textColor = [CalendarAppearance share].dayTextColorSelected;
+            lunarTextLabel.textColor = [CalendarAppearance share].lunarDayTextColorSelected;
             
         }
         if ([self isToday]) {
             //今天实心圆的颜色
-            circleView.color = [LTSCalendarAppearance share].dayCircleColorToday;
+            circleView.color = [CalendarAppearance share].dayCircleColorToday;
             
         }
         circleView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.1, 0.1);
-        dotView.color = [LTSCalendarAppearance share].dayDotColorSelected;
+        dotView.color = [CalendarAppearance share].dayDotColorSelected;
         tr = CGAffineTransformIdentity;
     }else {
-        dotView.color = [LTSCalendarAppearance share].dayDotColor;
+        dotView.color = [CalendarAppearance share].dayDotColor;
         circleView.color = [UIColor clearColor];
         if ([self isToday]){
             
-            circleView.layer.borderColor = [LTSCalendarAppearance share].dayBorderColorToday.CGColor;
+            circleView.layer.borderColor = [CalendarAppearance share].dayBorderColorToday.CGColor;
             
-            textLabel.textColor = [LTSCalendarAppearance share].dayTextColor;
-            lunarTextLabel.textColor = [LTSCalendarAppearance share].lunarDayTextColor;
+            textLabel.textColor = [CalendarAppearance share].dayTextColor;
+            lunarTextLabel.textColor = [CalendarAppearance share].lunarDayTextColor;
         }
         else{
             if(!self.item.isOtherMonth ){
                 
-                textLabel.textColor = [LTSCalendarAppearance share].dayTextColor;
-                lunarTextLabel.textColor = [LTSCalendarAppearance share].lunarDayTextColor;
+                textLabel.textColor = [CalendarAppearance share].dayTextColor;
+                lunarTextLabel.textColor = [CalendarAppearance share].lunarDayTextColor;
                 
             }
             else{
-                textLabel.textColor = [LTSCalendarAppearance share].dayTextColorOtherMonth;
-                lunarTextLabel.textColor = [LTSCalendarAppearance share].lunarDayTextColorOtherMonth;
+                textLabel.textColor = [CalendarAppearance share].dayTextColorOtherMonth;
+                lunarTextLabel.textColor = [CalendarAppearance share].lunarDayTextColorOtherMonth;
             }
             
             circleView.layer.borderColor = [UIColor clearColor].CGColor;
@@ -279,7 +279,7 @@
 
 - (NSInteger)monthIndexForDate:(NSDate *)date
 {
-    NSCalendar *calendar = [LTSCalendarAppearance share].calendar;
+    NSCalendar *calendar = [CalendarAppearance share].calendar;
     NSDateComponents *comps = [calendar components:NSCalendarUnitMonth fromDate:date];
     return comps.month;
 }

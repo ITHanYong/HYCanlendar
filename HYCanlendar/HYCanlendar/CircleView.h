@@ -1,13 +1,13 @@
 //
-//  LTSCircleView.h
-//  LTSCalendar
+//  CircleView.h
+//  Calendar
 //
 //  Created by Jonathan Tribouharet
 //
 
 #import <UIKit/UIKit.h>
 
-@interface LTSCircleView : UIView
+@interface CircleView : UIView
 
 @property (nonatomic, strong) UIColor *color;
 

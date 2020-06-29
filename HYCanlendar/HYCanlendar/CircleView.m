@@ -1,13 +1,13 @@
 //
-//  LTSCircleView.h
-//  LTSCalendar
+//  CircleView.h
+//  Calendar
 //
 //  Created by Jonathan Tribouharet
 //
 
-#import "LTSCircleView.h"
+#import "CircleView.h"
 
-@implementation LTSCircleView
+@implementation CircleView
 
 - (instancetype)init
 {

@@ -1,25 +1,25 @@
 //
-//  HYCalendarEventCell.m
-//  POD_HYCanlendar
+//  CalendarEventCell.m
+//  HYCanlendar
 //
 //  Created by HanYong on 2020/3/23.
 //
 
-#import "HYCalendarEventCell.h"
+#import "CalendarEventCell.h"
 
-@interface HYCalendarEventCell ()
+@interface CalendarEventCell ()
 
 @property (nonatomic, strong) UILabel *testLabel;
 
 @end
 
-@implementation HYCalendarEventCell
+@implementation CalendarEventCell
 
 + (instancetype)cellWithTableView:(UITableView *)tableView {
     static NSString *cellID = @"HYCalendarEventCell";
-    HYCalendarEventCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+    CalendarEventCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
     if (!cell) {
-        cell = [[HYCalendarEventCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
+        cell = [[CalendarEventCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
     }
     return cell;
 }

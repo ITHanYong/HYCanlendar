@@ -1,19 +1,19 @@
 //
-//  LTSCalendarCollectionView.m
-//  LTSCalendar
+//  CalendarCollectionView.m
+//  Calendar
 //
-//  Created by 李棠松 on 2018/1/9.
-//  Copyright © 2018年 leetangsong. All rights reserved.
+//  Created by Mac on 2018/1/9.
+//  Copyright © 2018年 Mac. All rights reserved.
 //
 
-#import "LTSCalendarContentView.h"
+#import "CalendarContentView.h"
 
-#import "LTSCalendarCollectionCell.h"
-#import "LTSCalendarDayItem.h"
-#import "LTSCalendarManager.h"
+#import "CalendarCollectionCell.h"
+#import "CalendarDayItem.h"
+#import "CalendarManager.h"
 
 #define NUMBER_PAGES_LOADED 5
-@interface LTSCalendarContentView()<UICollectionViewDataSource,UICollectionViewDelegate>{
+@interface CalendarContentView()<UICollectionViewDataSource,UICollectionViewDelegate>{
     //是否是在点击日期或者滑动改变页数
     BOOL isOwnChangePage;
     //第一次显示周的选中的indexPath
@@ -31,7 +31,7 @@
 //@property (nonatomic,st)
 @end
 
-@implementation LTSCalendarContentView
+@implementation CalendarContentView
 
 - (instancetype)init
 {
@@ -49,7 +49,7 @@
     }
     return self;
 }
-- (void)setEventSource:(id<LTSCalendarEventSource>)eventSource{
+- (void)setEventSource:(id<CalendarEventSource>)eventSource{
     _eventSource = eventSource;
     [self updatePageWithNewDate:NO];
     [UIView performWithoutAnimation:^{
@@ -59,12 +59,12 @@
 
 - (void)initUI
 {
-    self.flowLayout = [LTSCalendarCollectionViewFlowLayout new];
-    self.flowLayout.itemSize = CGSizeMake(self.frame.size.width/7, [LTSCalendarAppearance share].weekDayHeight);
+    self.flowLayout = [CalendarCollectionViewFlowLayout new];
+    self.flowLayout.itemSize = CGSizeMake(self.frame.size.width/7, [CalendarAppearance share].weekDayHeight);
     self.flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     self.flowLayout.itemCountPerRow = 7;
-//    self.flowLayout.rowCount = [LTSCalendarAppearance share].isShowSingleWeek ? 1:[LTSCalendarAppearance share].weeksToDisplay;
-    self.flowLayout.rowCount = [LTSCalendarAppearance share].weeksToDisplay;
+//    self.flowLayout.rowCount = [CalendarAppearance share].isShowSingleWeek ? 1:[CalendarAppearance share].weeksToDisplay;
+    self.flowLayout.rowCount = [CalendarAppearance share].weeksToDisplay;
     self.flowLayout.minimumLineSpacing = 0;
     self.flowLayout.minimumInteritemSpacing = 0;
     self.collectionView = [[UICollectionView alloc]initWithFrame:self.bounds collectionViewLayout:self.flowLayout];
@@ -77,15 +77,15 @@
     if (@available(iOS 11.0, *)) {
         self.collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     }
-    [self.collectionView registerClass:[LTSCalendarCollectionCell class] forCellWithReuseIdentifier:@"dayCell"];
-//    self.collectionView.contentInset = UIEdgeInsetsMake(0, 0,[LTSCalendarAppearance share].isShowSingleWeek ? [LTSCalendarAppearance share].weekDayHeight*([LTSCalendarAppearance share].weeksToDisplay-1) : 0, 0);
-    self.backgroundColor = [LTSCalendarAppearance share].calendarBgColor;
+    [self.collectionView registerClass:[CalendarCollectionCell class] forCellWithReuseIdentifier:@"dayCell"];
+//    self.collectionView.contentInset = UIEdgeInsetsMake(0, 0,[CalendarAppearance share].isShowSingleWeek ? [CalendarAppearance share].weekDayHeight*([CalendarAppearance share].weeksToDisplay-1) : 0, 0);
+    self.backgroundColor = [CalendarAppearance share].calendarBgColor;
     
     ///先初始化数据
     [self getDateDatas];
     
     UIView *maskView = [[UIView alloc] initWithFrame:self.bounds];
-    maskView.backgroundColor = [LTSCalendarAppearance share].calendarBgColor;
+    maskView.backgroundColor = [CalendarAppearance share].calendarBgColor;
     maskView.alpha = 0;
     maskView.hidden = true;
     self.maskView = maskView;
@@ -99,8 +99,8 @@
 }
 
 - (void)setSingleWeek:(BOOL)singleWeek{
-    [LTSCalendarAppearance share].isShowSingleWeek = singleWeek;
-//    self.flowLayout.rowCount = singleWeek ? 1:[LTSCalendarAppearance share].weeksToDisplay;
+    [CalendarAppearance share].isShowSingleWeek = singleWeek;
+//    self.flowLayout.rowCount = singleWeek ? 1:[CalendarAppearance share].weeksToDisplay;
 //   self.collectionView.contentInset = UIEdgeInsetsMake(0, 0,(singleWeek ? appearance.weekDayHeight*(appearance.weeksToDisplay-1) : 0), 0);
     beginWeekIndexPath = nil;
  
@@ -113,7 +113,7 @@
 
 ///获取当前选中的frame
 - (CGRect)obtainVisualFrame{
-    return CGRectMake(0 , ([self weekOfMonthWithDate:self.currentDate]-1)*[LTSCalendarAppearance share].weekDayHeight, CGRectGetWidth(self.frame), [LTSCalendarAppearance share].weekDayHeight);
+    return CGRectMake(0 , ([self weekOfMonthWithDate:self.currentDate]-1)*[CalendarAppearance share].weekDayHeight, CGRectGetWidth(self.frame), [CalendarAppearance share].weekDayHeight);
 }
 //设置可见的区域
 - (void)setUpVisualRegion{
@@ -130,15 +130,15 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-//    if ([LTSCalendarAppearance share].isShowSingleWeek) {
+//    if ([CalendarAppearance share].isShowSingleWeek) {
 //        return  7;
 //    }
-    return 7*[LTSCalendarAppearance share].weeksToDisplay;
+    return 7*[CalendarAppearance share].weeksToDisplay;
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    LTSCalendarCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"dayCell" forIndexPath:indexPath];
-    LTSCalendarDayItem *item = self.daysInMonth[indexPath.section][indexPath.row];
-    if ([LTSCalendarAppearance share].isShowSingleWeek) {
+    CalendarCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"dayCell" forIndexPath:indexPath];
+    CalendarDayItem *item = self.daysInMonth[indexPath.section][indexPath.row];
+    if ([CalendarAppearance share].isShowSingleWeek) {
         item = self.daysInWeeks[indexPath.section][indexPath.row%7];
     }
     cell.item = item;
@@ -148,19 +148,19 @@
 #pragma mark -- UICollectionViewDelegate --
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     isOwnChangePage = true;
-    LTSCalendarCollectionCell *cell = (LTSCalendarCollectionCell*)[collectionView cellForItemAtIndexPath:indexPath];
+    CalendarCollectionCell *cell = (CalendarCollectionCell*)[collectionView cellForItemAtIndexPath:indexPath];
     cell.isSelected = true;
-    LTSCalendarDayItem *itemCurrent;
-    LTSCalendarDayItem *itemLast;
+    CalendarDayItem *itemCurrent;
+    CalendarDayItem *itemLast;
     NSArray *dataSource;
-    if ([LTSCalendarAppearance share].isShowSingleWeek) {
+    if ([CalendarAppearance share].isShowSingleWeek) {
         dataSource = self.daysInWeeks;
     }else{
         dataSource = self.daysInMonth;
     }
 
     
-    if ( [LTSCalendarAppearance share].isShowSingleWeek) {
+    if ( [CalendarAppearance share].isShowSingleWeek) {
         itemLast = dataSource[self.currentSelectedIndexPath.section][self.currentSelectedIndexPath.item%7];
         itemCurrent = dataSource[indexPath.section][indexPath.item%7];
     }else{
@@ -173,24 +173,24 @@
     
     itemLast.isSelected = NO;
     
-    NSDateComponents *comps = [[LTSCalendarAppearance share].calendar components:NSCalendarUnitMonth | NSCalendarUnitWeekOfMonth | NSCalendarUnitWeekday fromDate:itemCurrent.date];
+    NSDateComponents *comps = [[CalendarAppearance share].calendar components:NSCalendarUnitMonth | NSCalendarUnitWeekOfMonth | NSCalendarUnitWeekday fromDate:itemCurrent.date];
    
     
     NSInteger touchMonthIndex = [self monthIndexForDate:itemCurrent.date];
     
     NSInteger currentMonth = [self monthIndexForDate:self.currentDate];
     
-    if (touchMonthIndex == currentMonth || [LTSCalendarAppearance share].isShowSingleWeek) {
-        LTSCalendarCollectionCell *lastCell = (LTSCalendarCollectionCell*)[collectionView cellForItemAtIndexPath:self.currentSelectedIndexPath];
+    if (touchMonthIndex == currentMonth || [CalendarAppearance share].isShowSingleWeek) {
+        CalendarCollectionCell *lastCell = (CalendarCollectionCell*)[collectionView cellForItemAtIndexPath:self.currentSelectedIndexPath];
         lastCell.isSelected = false;
     }
     
-    NSInteger index = comps.weekday-[LTSCalendarAppearance share].calendar.firstWeekday%7;
+    NSInteger index = comps.weekday-[CalendarAppearance share].calendar.firstWeekday%7;
     if (index < 0) {
         index += 7;
     }
     
-    if ([LTSCalendarAppearance share].isShowSingleWeek) {
+    if ([CalendarAppearance share].isShowSingleWeek) {
         self.currentSelectedIndexPath = indexPath;
         self.currentDate = itemCurrent.date;
     }else{
@@ -260,7 +260,7 @@
 #pragma mark -- Function --
 
 - (void)reloadAppearance{
-    self.backgroundColor = [LTSCalendarAppearance share].calendarBgColor;
+    self.backgroundColor = [CalendarAppearance share].calendarBgColor;
     self.maskView.backgroundColor = self.backgroundColor;
     [self getDateDatas];
     [UIView performWithoutAnimation:^{
@@ -269,14 +269,14 @@
 }
 
 - (void)getDateDatas{
-    NSCalendar *calendar = [LTSCalendarAppearance share].calendar;
+    NSCalendar *calendar = [CalendarAppearance share].calendar;
     
    
     if (self.currentDate == nil) {
         self.currentDate = [NSDate date];
     }
     
-    if ([LTSCalendarAppearance share].isShowSingleWeek) {
+    if ([CalendarAppearance share].isShowSingleWeek) {
         NSMutableArray *daysInWeeks = [@[] mutableCopy];
         //获取前两周和后两周的日期
         for(int i = 0; i < NUMBER_PAGES_LOADED; i++){
@@ -344,7 +344,7 @@
     }
     
     //获取该周第一天
-    if ([LTSCalendarAppearance share].isShowSingleWeek) {
+    if ([CalendarAppearance share].isShowSingleWeek) {
          currentDate = [self beginningOfWeek:currentDate];
     }
     if (!isNew) {
@@ -368,15 +368,15 @@
     
     int currentPage = roundf(fractionalPage);
     
-    if (currentPage == round(NUMBER_PAGES_LOADED / 2) && [LTSCalendarAppearance share].isShowSingleWeek){
+    if (currentPage == round(NUMBER_PAGES_LOADED / 2) && [CalendarAppearance share].isShowSingleWeek){
         self.collectionView.scrollEnabled = YES;
         return nil;
     }
     
-    NSCalendar *calendar = [LTSCalendarAppearance share].calendar;
+    NSCalendar *calendar = [CalendarAppearance share].calendar;
     NSDateComponents *dayComponent = [NSDateComponents new];
     NSDate *currentDate;
-    if ([LTSCalendarAppearance share].isShowSingleWeek) {
+    if ([CalendarAppearance share].isShowSingleWeek) {
         dayComponent.weekOfYear = currentPage - (NUMBER_PAGES_LOADED / 2);
         currentDate = [calendar dateByAddingComponents:dayComponent toDate:[self beginningOfWeek:self.currentDate] options:0];
     }else{
@@ -390,7 +390,7 @@
 }
 
 - (CGFloat)singleWeekOffsetY{
-    return  self.currentSelectedIndexPath.row/7*[LTSCalendarAppearance share].weekDayHeight;
+    return  self.currentSelectedIndexPath.row/7*[CalendarAppearance share].weekDayHeight;
 }
 - (void)setCurrentDate:(NSDate *)currentDate{
     _currentDate = currentDate;
@@ -406,7 +406,7 @@
  *  @return date
  */
 - (NSDate *)beginningOfMonth:(NSDate *)date{
-    NSCalendar *calendar = [LTSCalendarAppearance share].calendar;
+    NSCalendar *calendar = [CalendarAppearance share].calendar;
     
     NSDateComponents *componentsCurrentDate =[calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay|NSCalendarUnitWeekday|NSCalendarUnitWeekOfMonth fromDate:date];
     
@@ -424,7 +424,7 @@
 
 ///获取日期在当月的周数
 - (NSInteger)weekOfMonthWithDate:(NSDate *)date{
-    NSCalendar *calendar = [LTSCalendarAppearance share].calendar;
+    NSCalendar *calendar = [CalendarAppearance share].calendar;
     NSDateComponents *components =[calendar components:NSCalendarUnitWeekOfMonth fromDate:date];
     return components.weekOfMonth;
 }
@@ -436,11 +436,11 @@
  *  @return date
  */
 - (NSDate *)beginningOfWeek:(NSDate *)date{
-    NSCalendar *calendar = [LTSCalendarAppearance share].calendar;
+    NSCalendar *calendar = [CalendarAppearance share].calendar;
     
     NSDateComponents *componentsCurrentDate =[calendar components:NSCalendarUnitDay | NSCalendarUnitWeekday fromDate:date];
     
-    NSInteger index = componentsCurrentDate.weekday-[LTSCalendarAppearance share].calendar.firstWeekday%7;
+    NSInteger index = componentsCurrentDate.weekday-[CalendarAppearance share].calendar.firstWeekday%7;
     if (index < 0) {
         index += 7;
     }
@@ -455,7 +455,7 @@
 {
     NSDate *currentDate = date;
     
-    NSCalendar *calendar = [LTSCalendarAppearance share].calendar;
+    NSCalendar *calendar = [CalendarAppearance share].calendar;
     
     //每一周的 date
     NSMutableArray *daysOfweek = [@[] mutableCopy];
@@ -464,14 +464,14 @@
         NSDateComponents *comps = [calendar components:NSCalendarUnitMonth | NSCalendarUnitWeekOfMonth fromDate:currentDate];
         NSInteger monthIndex = comps.month;
         
-        LTSCalendarDayItem *item = [LTSCalendarDayItem new];
+        CalendarDayItem *item = [CalendarDayItem new];
         item.isOtherMonth = monthIndex != self.currentMonthIndex;
         item.date = currentDate;
         if ([self isEqual:currentDate other:self.currentDate]) {
             item.isSelected = YES;
             self.currentSelectedIndexPath = [NSIndexPath indexPathForItem:(comps.weekOfMonth-1)*7+i inSection:round(NUMBER_PAGES_LOADED / 2)];
             
-            if ([LTSCalendarAppearance share].isShowSingleWeek) {
+            if ([CalendarAppearance share].isShowSingleWeek) {
                 if (beginWeekIndexPath) {
                     self.currentSelectedIndexPath = [NSIndexPath indexPathForRow:beginWeekIndexPath.row/7*7 inSection:round(NUMBER_PAGES_LOADED / 2)];
                 }
@@ -483,7 +483,7 @@
             
         }
         
-        item.eventDotColor = [LTSCalendarAppearance share].dayDotColor;
+        item.eventDotColor = [CalendarAppearance share].dayDotColor;
         if (self.eventSource && [self.eventSource respondsToSelector:@selector(calendarHaveEventWithDate:)]) {
             item.showEventDot = [self.eventSource calendarHaveEventWithDate:currentDate];
         }
@@ -503,7 +503,7 @@
 {
     NSDate *currentDate = date;
     
-    NSCalendar *calendar = [LTSCalendarAppearance share].calendar;
+    NSCalendar *calendar = [CalendarAppearance share].calendar;
     
     //每一月的 date
     NSMutableArray *daysOfMonth = [@[] mutableCopy];
@@ -519,7 +519,7 @@
         }
     }
     
-    for (NSInteger i = 0; i<[LTSCalendarAppearance share].weeksToDisplay; i++) {
+    for (NSInteger i = 0; i<[CalendarAppearance share].weeksToDisplay; i++) {
         NSDateComponents *dayComponent = [NSDateComponents new];
         dayComponent.day = 7;
         NSArray *array = [self getDaysOfWeek:currentDate];
@@ -532,7 +532,7 @@
 }
 - (NSInteger)monthIndexForDate:(NSDate *)date
 {
-    NSCalendar *calendar = [LTSCalendarAppearance share].calendar;
+    NSCalendar *calendar = [CalendarAppearance share].calendar;
     NSDateComponents *comps = [calendar components:NSCalendarUnitMonth fromDate:date];
     return comps.month;
 }
@@ -541,7 +541,7 @@
 - (BOOL)isEqual:(NSDate *)date1 other:(NSDate *)date2{
     
     NSDateFormatter *dateFormatter = [NSDateFormatter new];
-    dateFormatter.timeZone = [LTSCalendarAppearance share].calendar.timeZone;
+    dateFormatter.timeZone = [CalendarAppearance share].calendar.timeZone;
     dateFormatter.dateFormat = @"yyyy.MM.dd";
     
     return [[dateFormatter stringFromDate:date1] isEqualToString:[dateFormatter stringFromDate:date2]];

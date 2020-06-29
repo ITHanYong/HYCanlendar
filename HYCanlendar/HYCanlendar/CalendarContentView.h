@@ -1,24 +1,24 @@
 //
-//  LTSCalendarContentView.h
-//  LTSCalendar
+//  CalendarContentView.h
+//  Calendar
 //
-//  Created by 李棠松 on 2018/1/9.
-//  Copyright © 2018年 leetangsong. All rights reserved.
+//  Created by Mac on 2018/1/9.
+//  Copyright © 2018年 Mac. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-#import "LTSCalendarAppearance.h"
-#import "LTSCalendarCollectionViewFlowLayout.h"
-#import "LTSCalendarEventSource.h"
-@interface LTSCalendarContentView : UIView
+#import "CalendarAppearance.h"
+#import "CalendarCollectionViewFlowLayout.h"
+#import "CalendarEventSource.h"
+@interface CalendarContentView : UIView
 
-@property (nonatomic,strong) LTSCalendarCollectionViewFlowLayout *flowLayout;
+@property (nonatomic,strong) CalendarCollectionViewFlowLayout *flowLayout;
 
 @property (nonatomic,strong) UICollectionView *collectionView;
 //遮罩
 @property (nonatomic,strong)UIView *maskView;
 //事件代理
-@property (weak, nonatomic) id<LTSCalendarEventSource> eventSource;
+@property (weak, nonatomic) id<CalendarEventSource> eventSource;
 
 @property (nonatomic,strong)NSDate *currentDate;
 ///滚动到单周需要的offset

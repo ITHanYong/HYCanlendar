@@ -1,15 +1,15 @@
 //
-//  LTSCalendarWeekDayView.m
+//  CalendarWeekDayView.m
 //  scrollTest
 //
-//  Created by leetangsong_macbk on 16/5/27.
+//  Created by Mac on 16/5/27.
 //  Copyright © 2016年 macbook. All rights reserved.
 //
 
-#import "LTSCalendarWeekDayView.h"
-#import "LTSCalendarAppearance.h"
+#import "CalendarWeekDayView.h"
+#import "CalendarAppearance.h"
 
-@implementation LTSCalendarWeekDayView
+@implementation CalendarWeekDayView
 
 static NSArray *cacheDaysOfWeeks;
 
@@ -30,8 +30,8 @@ static NSArray *cacheDaysOfWeeks;
     //周日 - 周六
     for(NSString *day in [self daysOfWeek]){
         UILabel *view = [UILabel new];
-        view.font = [LTSCalendarAppearance share].weekDayTextFont;
-        view.textColor = [LTSCalendarAppearance share].weekDayTextColor;
+        view.font = [CalendarAppearance share].weekDayTextFont;
+        view.textColor = [CalendarAppearance share].weekDayTextColor;
         view.textAlignment = NSTextAlignmentCenter;
         view.text = day;
         [self addSubview:view];
@@ -48,14 +48,14 @@ static NSArray *cacheDaysOfWeeks;
     dateFormatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"zh_CN"];
     NSMutableArray *days = nil;
     
-    switch([LTSCalendarAppearance share].weekDayFormat) {
-        case LTSCalendarWeekDayFormatSingle:
+    switch([CalendarAppearance share].weekDayFormat) {
+        case CalendarWeekDayFormatSingle:
             days = [[dateFormatter veryShortStandaloneWeekdaySymbols] mutableCopy];
             break;
-        case LTSCalendarWeekDayFormatShort:
+        case CalendarWeekDayFormatShort:
             days = [[dateFormatter shortStandaloneWeekdaySymbols] mutableCopy];
             break;
-        case LTSCalendarWeekDayFormatFull:
+        case CalendarWeekDayFormatFull:
             days = [[dateFormatter standaloneWeekdaySymbols] mutableCopy];
             break;
     }
@@ -67,7 +67,7 @@ static NSArray *cacheDaysOfWeeks;
     
     // Redorder days for be conform to calendar
     {
-        NSCalendar *calendar = [LTSCalendarAppearance share].calendar;
+        NSCalendar *calendar = [CalendarAppearance share].calendar;
         NSUInteger firstWeekday = (calendar.firstWeekday + 6) % 7; // Sunday == 1, Saturday == 7
         
         for(int i = 0; i < firstWeekday; ++i){
@@ -110,12 +110,12 @@ static NSArray *cacheDaysOfWeeks;
         
     }
     [self commonInit];
-    self.backgroundColor = [LTSCalendarAppearance share].weekDayBgColor;
+    self.backgroundColor = [CalendarAppearance share].weekDayBgColor;
     for(int i = 0; i < self.subviews.count; ++i){
         UILabel *view = [self.subviews objectAtIndex:i];
         
-        view.font = [LTSCalendarAppearance share].weekDayTextFont;
-        view.textColor = [LTSCalendarAppearance share].weekDayTextColor;
+        view.font = [CalendarAppearance share].weekDayTextFont;
+        view.textColor = [CalendarAppearance share].weekDayTextColor;
         view.text = [[self daysOfWeek] objectAtIndex:i];
     }
 }
