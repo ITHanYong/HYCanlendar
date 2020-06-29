@@ -1,0 +1,426 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		447CAFAF24A9949F00678B52 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 447CAFAE24A9949F00678B52 /* AppDelegate.m */; };
+		447CAFB224A9949F00678B52 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 447CAFB124A9949F00678B52 /* SceneDelegate.m */; };
+		447CAFB524A9949F00678B52 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 447CAFB424A9949F00678B52 /* ViewController.m */; };
+		447CAFB824A9949F00678B52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 447CAFB624A9949F00678B52 /* Main.storyboard */; };
+		447CAFBA24A994A100678B52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 447CAFB924A994A100678B52 /* Assets.xcassets */; };
+		447CAFBD24A994A100678B52 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 447CAFBB24A994A100678B52 /* LaunchScreen.storyboard */; };
+		447CAFC024A994A100678B52 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 447CAFBF24A994A100678B52 /* main.m */; };
+		447CAFDF24A9952800678B52 /* LTSCalendarContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 447CAFC724A9952500678B52 /* LTSCalendarContentView.m */; };
+		447CAFE024A9952800678B52 /* LTSCalendarCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 447CAFC824A9952500678B52 /* LTSCalendarCollectionViewFlowLayout.m */; };
+		447CAFE124A9952800678B52 /* HYCalendarEventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 447CAFCB24A9952500678B52 /* HYCalendarEventCell.m */; };
+		447CAFE224A9952800678B52 /* LTSCalendarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 447CAFCD24A9952500678B52 /* LTSCalendarManager.m */; };
+		447CAFE324A9952800678B52 /* LTSCalendarScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 447CAFCF24A9952600678B52 /* LTSCalendarScrollView.m */; };
+		447CAFE424A9952800678B52 /* LTSCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 447CAFD124A9952600678B52 /* LTSCircleView.m */; };
+		447CAFE524A9952800678B52 /* LTSCalendarCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 447CAFD824A9952700678B52 /* LTSCalendarCollectionCell.m */; };
+		447CAFE624A9952800678B52 /* LTSCalendarWeekDayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 447CAFD924A9952700678B52 /* LTSCalendarWeekDayView.m */; };
+		447CAFE724A9952800678B52 /* LTSCalendarDayItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 447CAFDA24A9952700678B52 /* LTSCalendarDayItem.m */; };
+		447CAFE824A9952800678B52 /* LTSCalendarAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 447CAFDB24A9952700678B52 /* LTSCalendarAppearance.m */; };
+		447CAFE924A9952800678B52 /* LTSCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 447CAFDD24A9952700678B52 /* LTSCalendarViewController.m */; };
+		447CAFEA24A9952800678B52 /* ReplaceMe.m in Sources */ = {isa = PBXBuildFile; fileRef = 447CAFDE24A9952800678B52 /* ReplaceMe.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		447CAFAA24A9949F00678B52 /* HYCanlendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HYCanlendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		447CAFAD24A9949F00678B52 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		447CAFAE24A9949F00678B52 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		447CAFB024A9949F00678B52 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		447CAFB124A9949F00678B52 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		447CAFB324A9949F00678B52 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		447CAFB424A9949F00678B52 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		447CAFB724A9949F00678B52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		447CAFB924A994A100678B52 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		447CAFBC24A994A100678B52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		447CAFBE24A994A100678B52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		447CAFBF24A994A100678B52 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		447CAFC724A9952500678B52 /* LTSCalendarContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSCalendarContentView.m; sourceTree = "<group>"; };
+		447CAFC824A9952500678B52 /* LTSCalendarCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSCalendarCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		447CAFC924A9952500678B52 /* HYCalendarEventCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYCalendarEventCell.h; sourceTree = "<group>"; };
+		447CAFCA24A9952500678B52 /* LTSCalendarCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCalendarCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		447CAFCB24A9952500678B52 /* HYCalendarEventCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYCalendarEventCell.m; sourceTree = "<group>"; };
+		447CAFCC24A9952500678B52 /* LTSCalendarEventSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCalendarEventSource.h; sourceTree = "<group>"; };
+		447CAFCD24A9952500678B52 /* LTSCalendarManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSCalendarManager.m; sourceTree = "<group>"; };
+		447CAFCE24A9952600678B52 /* LTSCalendarManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCalendarManager.h; sourceTree = "<group>"; };
+		447CAFCF24A9952600678B52 /* LTSCalendarScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSCalendarScrollView.m; sourceTree = "<group>"; };
+		447CAFD024A9952600678B52 /* LTSCalendarCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCalendarCollectionCell.h; sourceTree = "<group>"; };
+		447CAFD124A9952600678B52 /* LTSCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSCircleView.m; sourceTree = "<group>"; };
+		447CAFD224A9952600678B52 /* LTSCalendarAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCalendarAppearance.h; sourceTree = "<group>"; };
+		447CAFD324A9952600678B52 /* LTSCalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCalendarViewController.h; sourceTree = "<group>"; };
+		447CAFD424A9952600678B52 /* LTSCalendarScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCalendarScrollView.h; sourceTree = "<group>"; };
+		447CAFD524A9952600678B52 /* LTSCalendarContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCalendarContentView.h; sourceTree = "<group>"; };
+		447CAFD624A9952700678B52 /* LTSCalendarDayItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCalendarDayItem.h; sourceTree = "<group>"; };
+		447CAFD724A9952700678B52 /* LTSCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCircleView.h; sourceTree = "<group>"; };
+		447CAFD824A9952700678B52 /* LTSCalendarCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSCalendarCollectionCell.m; sourceTree = "<group>"; };
+		447CAFD924A9952700678B52 /* LTSCalendarWeekDayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSCalendarWeekDayView.m; sourceTree = "<group>"; };
+		447CAFDA24A9952700678B52 /* LTSCalendarDayItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSCalendarDayItem.m; sourceTree = "<group>"; };
+		447CAFDB24A9952700678B52 /* LTSCalendarAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSCalendarAppearance.m; sourceTree = "<group>"; };
+		447CAFDC24A9952700678B52 /* LTSCalendarWeekDayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCalendarWeekDayView.h; sourceTree = "<group>"; };
+		447CAFDD24A9952700678B52 /* LTSCalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSCalendarViewController.m; sourceTree = "<group>"; };
+		447CAFDE24A9952800678B52 /* ReplaceMe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReplaceMe.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		447CAFA724A9949F00678B52 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		447CAFA124A9949F00678B52 = {
+			isa = PBXGroup;
+			children = (
+				447CAFAC24A9949F00678B52 /* HYCanlendar */,
+				447CAFAB24A9949F00678B52 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		447CAFAB24A9949F00678B52 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				447CAFAA24A9949F00678B52 /* HYCanlendar.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		447CAFAC24A9949F00678B52 /* HYCanlendar */ = {
+			isa = PBXGroup;
+			children = (
+				447CAFAD24A9949F00678B52 /* AppDelegate.h */,
+				447CAFAE24A9949F00678B52 /* AppDelegate.m */,
+				447CAFB024A9949F00678B52 /* SceneDelegate.h */,
+				447CAFB124A9949F00678B52 /* SceneDelegate.m */,
+				447CAFB324A9949F00678B52 /* ViewController.h */,
+				447CAFB424A9949F00678B52 /* ViewController.m */,
+				447CAFC624A994FE00678B52 /* HYCanlendar */,
+				447CAFB624A9949F00678B52 /* Main.storyboard */,
+				447CAFB924A994A100678B52 /* Assets.xcassets */,
+				447CAFBB24A994A100678B52 /* LaunchScreen.storyboard */,
+				447CAFBE24A994A100678B52 /* Info.plist */,
+				447CAFBF24A994A100678B52 /* main.m */,
+			);
+			path = HYCanlendar;
+			sourceTree = "<group>";
+		};
+		447CAFC624A994FE00678B52 /* HYCanlendar */ = {
+			isa = PBXGroup;
+			children = (
+				447CAFC924A9952500678B52 /* HYCalendarEventCell.h */,
+				447CAFCB24A9952500678B52 /* HYCalendarEventCell.m */,
+				447CAFD224A9952600678B52 /* LTSCalendarAppearance.h */,
+				447CAFDB24A9952700678B52 /* LTSCalendarAppearance.m */,
+				447CAFD024A9952600678B52 /* LTSCalendarCollectionCell.h */,
+				447CAFD824A9952700678B52 /* LTSCalendarCollectionCell.m */,
+				447CAFCA24A9952500678B52 /* LTSCalendarCollectionViewFlowLayout.h */,
+				447CAFC824A9952500678B52 /* LTSCalendarCollectionViewFlowLayout.m */,
+				447CAFD524A9952600678B52 /* LTSCalendarContentView.h */,
+				447CAFC724A9952500678B52 /* LTSCalendarContentView.m */,
+				447CAFD624A9952700678B52 /* LTSCalendarDayItem.h */,
+				447CAFDA24A9952700678B52 /* LTSCalendarDayItem.m */,
+				447CAFCC24A9952500678B52 /* LTSCalendarEventSource.h */,
+				447CAFCE24A9952600678B52 /* LTSCalendarManager.h */,
+				447CAFCD24A9952500678B52 /* LTSCalendarManager.m */,
+				447CAFD424A9952600678B52 /* LTSCalendarScrollView.h */,
+				447CAFCF24A9952600678B52 /* LTSCalendarScrollView.m */,
+				447CAFD324A9952600678B52 /* LTSCalendarViewController.h */,
+				447CAFDD24A9952700678B52 /* LTSCalendarViewController.m */,
+				447CAFDC24A9952700678B52 /* LTSCalendarWeekDayView.h */,
+				447CAFD924A9952700678B52 /* LTSCalendarWeekDayView.m */,
+				447CAFD724A9952700678B52 /* LTSCircleView.h */,
+				447CAFD124A9952600678B52 /* LTSCircleView.m */,
+				447CAFDE24A9952800678B52 /* ReplaceMe.m */,
+			);
+			path = HYCanlendar;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		447CAFA924A9949F00678B52 /* HYCanlendar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 447CAFC324A994A100678B52 /* Build configuration list for PBXNativeTarget "HYCanlendar" */;
+			buildPhases = (
+				447CAFA624A9949F00678B52 /* Sources */,
+				447CAFA724A9949F00678B52 /* Frameworks */,
+				447CAFA824A9949F00678B52 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HYCanlendar;
+			productName = HYCanlendar;
+			productReference = 447CAFAA24A9949F00678B52 /* HYCanlendar.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		447CAFA224A9949F00678B52 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = HanYong;
+				TargetAttributes = {
+					447CAFA924A9949F00678B52 = {
+						CreatedOnToolsVersion = 11.5;
+					};
+				};
+			};
+			buildConfigurationList = 447CAFA524A9949F00678B52 /* Build configuration list for PBXProject "HYCanlendar" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 447CAFA124A9949F00678B52;
+			productRefGroup = 447CAFAB24A9949F00678B52 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				447CAFA924A9949F00678B52 /* HYCanlendar */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		447CAFA824A9949F00678B52 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				447CAFBD24A994A100678B52 /* LaunchScreen.storyboard in Resources */,
+				447CAFBA24A994A100678B52 /* Assets.xcassets in Resources */,
+				447CAFB824A9949F00678B52 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		447CAFA624A9949F00678B52 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				447CAFB524A9949F00678B52 /* ViewController.m in Sources */,
+				447CAFAF24A9949F00678B52 /* AppDelegate.m in Sources */,
+				447CAFE524A9952800678B52 /* LTSCalendarCollectionCell.m in Sources */,
+				447CAFE424A9952800678B52 /* LTSCircleView.m in Sources */,
+				447CAFEA24A9952800678B52 /* ReplaceMe.m in Sources */,
+				447CAFE324A9952800678B52 /* LTSCalendarScrollView.m in Sources */,
+				447CAFE924A9952800678B52 /* LTSCalendarViewController.m in Sources */,
+				447CAFE724A9952800678B52 /* LTSCalendarDayItem.m in Sources */,
+				447CAFE624A9952800678B52 /* LTSCalendarWeekDayView.m in Sources */,
+				447CAFE024A9952800678B52 /* LTSCalendarCollectionViewFlowLayout.m in Sources */,
+				447CAFC024A994A100678B52 /* main.m in Sources */,
+				447CAFDF24A9952800678B52 /* LTSCalendarContentView.m in Sources */,
+				447CAFB224A9949F00678B52 /* SceneDelegate.m in Sources */,
+				447CAFE124A9952800678B52 /* HYCalendarEventCell.m in Sources */,
+				447CAFE224A9952800678B52 /* LTSCalendarManager.m in Sources */,
+				447CAFE824A9952800678B52 /* LTSCalendarAppearance.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		447CAFB624A9949F00678B52 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				447CAFB724A9949F00678B52 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		447CAFBB24A994A100678B52 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				447CAFBC24A994A100678B52 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		447CAFC124A994A100678B52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		447CAFC224A994A100678B52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		447CAFC424A994A100678B52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G82574ATF5;
+				INFOPLIST_FILE = HYCanlendar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hanyong.HYCanlendar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		447CAFC524A994A100678B52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G82574ATF5;
+				INFOPLIST_FILE = HYCanlendar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hanyong.HYCanlendar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		447CAFA524A9949F00678B52 /* Build configuration list for PBXProject "HYCanlendar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				447CAFC124A994A100678B52 /* Debug */,
+				447CAFC224A994A100678B52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		447CAFC324A994A100678B52 /* Build configuration list for PBXNativeTarget "HYCanlendar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				447CAFC424A994A100678B52 /* Debug */,
+				447CAFC524A994A100678B52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 447CAFA224A9949F00678B52 /* Project object */;
+}
